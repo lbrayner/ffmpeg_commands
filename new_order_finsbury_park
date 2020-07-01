@@ -1,0 +1,16 @@
+-vn -acodec copy -to 00:07:06              01_New_Order-_-Live_at_Finsbury_Park-_-Crystal.m4a
+-vn -acodec copy -ss 00:07:06 -to 00:10:54 02_New_Order-_-Live_at_Finsbury_Park-_-Transmission.m4a
+-vn -acodec copy -ss 00:10:54 -to 00:15:06 03_New_Order-_-Live_at_Finsbury_Park-_-Regret.m4a
+-vn -acodec copy -ss 00:15:06 -to 00:20:06 04_New_Order-_-Live_at_Finsbury_Park-_-Ceremony.m4a
+-vn -acodec copy -ss 00:20:06 -to 00:24:51 05_New_Order-_-Live_at_Finsbury_Park-_-60_Miles_an_Hour.m4a
+-vn -acodec copy -ss 00:24:51 -to 00:29:22 06_New_Order-_-Live_at_Finsbury_Park-_-Atmosphere.m4a
+-vn -acodec copy -ss 00:29:22 -to 00:34:08 07_New_Order-_-Live_at_Finsbury_Park-_-Brutal.m4a
+-vn -acodec copy -ss 00:34:08 -to 00:39:27 08_New_Order-_-Live_at_Finsbury_Park-_-Close_Range.m4a
+-vn -acodec copy -ss 00:39:27 -to 00:45:24 09_New_Order-_-Live_at_Finsbury_Park-_-Shes_Lost_Control.m4a
+-vn -acodec copy -ss 00:45:24 -to 00:50:22 10_New_Order-_-Live_at_Finsbury_Park-_-Bizarre_Love_Triangle.m4a
+-vn -acodec copy -ss 00:50:22 -to 00:56:35 11_New_Order-_-Live_at_Finsbury_Park-_-True_Faith.m4a
+-vn -acodec copy -ss 00:56:35 -to 01:05:14 12_New_Order-_-Live_at_Finsbury_Park-_-Temptation.m4a
+-vn -acodec copy -ss 01:05:14 -to 01:09:34 13_New_Order-_-Live_at_Finsbury_Park-_-Love_Will_Tear_Us_Apart.m4a
+-vn -acodec copy -ss 01:09:34 -to 01:14:29 14_New_Order-_-Live_at_Finsbury_Park-_-Sister_Ray.m4a
+-vn -acodec copy -ss 01:14:29 -to 01:21:40 15_New_Order-_-Live_at_Finsbury_Park-_-Blue_Monday.m4a
+-vn -acodec copy -ss 01:21:40              16_New_Order-_-Live_at_Finsbury_Park-_-Your_Silent_Face.m4a
