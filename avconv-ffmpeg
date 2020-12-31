@@ -19,7 +19,7 @@ ffmpeg -i ~/Videos/incoming/"NIGHTWISH - Endless Forms Most Beautiful (OFFICIAL 
 
 ffmpeg -i ~/Videos/incoming/"Nightwish - Over the Hills and Far Away [HD - Lyrics]-o8gXzDLNWl8.m4a" -i ~/Videos/incoming/"Nightwish - Over the Hills and Far Away [HD - Lyrics]-o8gXzDLNWl8.mp4" -vcodec copy -acodec copy -map 0:0 -map 1:0 ~/Videos/incoming/"Nightwish - Over the Hills and_Far Away [HD - Lyrics]-o8gXzDLNWl8.mp4"
 
-ffmpeg -i ~/Videos/incoming/"Nightwish - Amaranth 1080p HD-O_Z9fxxXiTk.mkv" -i ~/Videos/incoming/"Nightwish - Amaranth 1080p HD-O_Z9fxxXiTk.m4a"|more 
+ffmpeg -i ~/Videos/incoming/"Nightwish - Amaranth 1080p HD-O_Z9fxxXiTk.mkv" -i ~/Videos/incoming/"Nightwish - Amaranth 1080p HD-O_Z9fxxXiTk.m4a"|more
 
 
 ffmpeg -i ~/Videos/incoming/"Nightwish - Amaranth [OFFICIAL VIDEO]-Z9MsW1b0QAA.m4a" -i ~/Videos/incoming/"Nightwish - Amaranth [OFFICIAL VIDEO]-Z9MsW1b0QAA.mp4" -vcodec copy -acodec copy -map 0:0 -map 1:0 ~/Videos/incoming/"Nightwish_- Amaranth [OFFICIAL VIDEO]-Z9MsW1b0QAA.m4a"
@@ -63,9 +63,13 @@ ffmpeg -i input.m4a -acodec libmp3lame -ab 128k output.mp3
 ffmpeg -i input.m4a
 ffmpeg -v quiet -f concat -i mylist.txt -c copy c:\Users\leona\java\DiscordSoundboard\sounds\ahoh.mp3
 
+ffmpeg -f concat -i concat.txt -c copy doido.ogg
+
 ffmpeg -y -i input.ts -i input.audio -map 0:0 -map 1:0 --vcodec copy -acodec copy matroska.mkv
 
 ffmpeg -y -i input.ts -vn -acodec libmp3lame -ab 128k -af "volume=10dB" defeat.mp3
+
+ffmpeg -y -i input.ts -vn -acodec copy defeat.mp3
 
 ffmpeg -y -i input.ts -vcodec copy -acodec copy -ss 00:00:24 -t 00:00:15 ghost_widow.mp4
 
@@ -346,6 +350,8 @@ ffmpeg -v quiet -y -i input.ts -vn -acodec  libmp3lame -ab 128k -af "volume=10dB
 
 ffmpeg -v quiet -y -i input.ts -vn -acodec  libmp3lame -ab 128k -af "volume=10dB" -ss 00:02:34 -t 00:00:03 bobina.mp3
 
+ffmpeg -v quiet -y -i input.ts -vn -acodec  libmp3lame -ab 128k -af "volume=10dB" -ss 00:02:09 -to 00:02:19 velho.mp3
+
 ffmpeg -v quiet -y -i input.ts -vn -acodec  libmp3lame -ab 128k -af "volume=10dB" -ss 00:00:44 -t 00:00:01 jaaj.mp3
 
 ffmpeg -v quiet -y -i input.ts -vn -acodec  libmp3lame -ab 128k -af "volume=10dB" -ss 00:01:15 -t 00:00:02 donada.mp3
@@ -401,6 +407,10 @@ ffmpeg -v quiet -y -i input.ts -vn -acodec  libmp3lame -ab 128k -af "volume=10dB
 ffmpeg -v quiet -y -i input.ts -vn -acodec  libmp3lame -ab 128k -af "volume=10dB" -ss 00:00:40 -t 00:00:10 fica.mp3
 ffmpeg -v quiet -y -i input.ts -vn -acodec  libmp3lame -ab 128k -af "volume=10dB" -ss 00:00:03 -t 00:00:02 se.mp3
 
+ffmpeg -v quiet -y -i input.ts -vn -acodec  libmp3lame -ab 128k -af "volume=10dB" -ss 00:01:03 -t 00:00:02 nao.mp3
+
+ffmpeg -v quiet -y -i input.ts -vn -acodec  copy -ss 00:00:50 monkey3_main.mp3
+
 ffmpeg -v quiet -y -i input.ts -vn -acodec  libmp3lame -ab 128k -ss 00:01:28 -t 00:00:02 soos.mp3
 ffmpeg -v quiet -y -i input.ts -vn -acodec  libmp3lame -ab 128k -ss 00:00:07 -t 00:00:01 dino.mp3
 
@@ -433,7 +443,7 @@ ffmpeg -v quiet -y -i input.ts -vn -acodec  libmp3lame -ab 128k -ss 00:01:09 -t 
 
 ffmpeg -v quiet -y -i input.ts -vn -acodec  libmp3lame -ab 128k -ss 00:00:39 -t 00:00:3 camera.mp3
 
-ffmpeg -v quiet -y -i input.ts -vn -acodec  libmp3lame -ab 160k 
+ffmpeg -v quiet -y -i input.ts -vn -acodec  libmp3lame -ab 160k
 
 ffmpeg -v quiet -y -i input.ts -vn -acodec  libmp3lame -ab 128k -filter:a "atempo=0.5,atempo=0.5"  hamburguer.mp3
 ffmpeg -v quiet -y -i input.ts -vn -acodec  libmp3lame -ab 128k -filter:a "atempo=0.5,atempo=0.5"  feliz.mp3
@@ -494,6 +504,18 @@ ffmpeg -y -i input.ts -vn -acodec libmp3lame -ab 128k -ss 00:01:07 -t 00:00:10 m
 ffmpeg -y -i input.ts -vn -acodec libmp3lame -ab 128k -ss 00:00:46.5 -t 00:00:2 se.mp3
 
 ffmpeg -y -i se.mp3 -vn -acodec aac -ab 128k -af "volume=+10dB" se.m4a
+
+ffmpeg -y -i se.mp3 -vn -acodec libmp3lame -ab 128k -af "volume=+10dB" -ss 00:00:11 -t 00:03:54 se.mp3
+
+ffmpeg -y -i se.mp3 -vn -acodec libmp3lame -ab 128k -af "volume=+10dB" -ss 00:02:03 -t 00:00:02 espaco.mp3
+
+ffmpeg -y -i input -vcodec copy -acodec copy -ss 00:55:00 output
+
+ffmpeg -y -i input -vcodec copy -acodec copy -ss 00:10:32 -to 00:10:42 output
+
+ffmpeg -y -i input -vcodec copy -acodec copy -ss 00:04:02 -to 00:04:18 output
+
+ffmpeg -y -i input -vn -acodec libmp3lame -ab 128k -ss 00:00:19 caac.mp3
 
 ffmpeg -y -i poesia.mp3 -vn -acodec  aac -ss 00:00:02 poesia.m4a
 
@@ -605,4 +627,43 @@ ffmpeg -y -i hamburguer.mp3 -i tainha.m4a -filter_complex \
 [p1][p2][p3][p4] concat=n=4:v=0:a=1 [out]" \
 -map "[out]" buger.mp3
 
-vim: textwidth=0
+ffmpeg -i in.mov -vf "transpose=1" out.mov
+
+ffmpeg -y -i input.m4v -metadata:s:v rotate="90" -codec copy output.m4v
+
+# rotate
+ffmpeg -y -i input.m4v -metadata:s:v rotate="270" -codec copy output.m4v
+
+
+# mp4
+ffmpeg -y -i input -vcodec libx264 -acodec copy -ss 00:01:20 output.mp4
+
+# https://superuser.com/a/835585
+ffmpeg -i <input_file> -af "highpass=f=200, lowpass=f=3000" <output_file>
+
+# simple edit
+ffmpeg -y -i input.ts -vcodec copy -acodec copy -ss 00:00:27 -to 00:05:58 flamengo_river_2019.mp4
+
+# cut and reencode video
+ffmpeg -y -i input.ts -vcodec libx264 -acodec copy -ss 00:00:27 -to 00:05:58 flamengo_river_2019.mp4
+
+# audio only
+ffmpeg -y -i input.ts -vn -acodec copy flamengo_river_2019.mp4
+
+# m3u8
+ffmpeg -y -live_start_index 0 -i "http://example.com/master.m3u8" -c copy -bsf:a aac_adtstoasc output.mp4
+
+ffmpeg -headers "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.101 Safari/537.36" \
+    -headers "Accept: */*" -y -live_start_index 0 -i "http://example.com/master.m3u8" -c copy -bsf:a aac_adtstoasc output.mp4
+
+# The chunk is actually MPEG-TS but first 127 bytes appears to be a small PNG
+# file affixed at the front. Forcing input format allows correct decoding.
+ffmpeg -y -f mpegts -i in.ts -c copy out.mp4
+
+# concat
+ffmpeg -safe 0 -f concat -i mylist.txt -c copy out.mp4
+
+# mux
+ffmpeg -i video -i audio -vcodec copy -acodec copy -map 0:0 -map 1:0 output
+
+# vim:ft=sh:textwidth=0
