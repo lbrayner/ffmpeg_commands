@@ -1,0 +1,3 @@
+curl_retry  -C - -H "Range: bytes=0-" LINK -o OUTPUT
+
+# vim:ft=sh
