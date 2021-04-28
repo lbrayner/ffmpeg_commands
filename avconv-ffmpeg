@@ -58,6 +58,8 @@ ffmpeg -i  /home/leonardo/Videos/incoming/"[ENG SUB] 151021 GFriend on Weekly Id
 
 ffmpeg -v quiet -y -i input.ts -vn -acodec  aac -ab 140k -af "volume=10dB" overwatch_tracer_170129.m4a
 
+ffmpeg -i input -c:a libopus -b:a 128K output
+
 ffmpeg -v quiet -y -i input.ts -vn -acodec libmp3lame -ab 128k -af "volume=10dB" -ss 00:00:03 -t 00:00:03 defeat.mp3
 ffmpeg -i input.m4a -acodec libmp3lame -ab 128k output.mp3
 ffmpeg -i input.m4a
@@ -665,5 +667,8 @@ ffmpeg -safe 0 -f concat -i mylist.txt -c copy out.mp4
 
 # mux
 ffmpeg -i video -i audio -vcodec copy -acodec copy -map 0:0 -map 1:0 output
+
+# wav
+ffmpeg -y -i input.wav -vn -acodec libmp3lame -ab 128k -af "volume=+10dB" output.mp3
 
 # vim:ft=sh:textwidth=0
