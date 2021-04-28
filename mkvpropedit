@@ -1,3 +1,7 @@
 find . ! -path \*/.\* -type f -name \*.webm -exec mkvpropedit "{}" --tags all:tags/"{}".xml \;
 
+# getting the title from the tags for mkvpropedit --set "title="
+xmllint --xpath "string(/Tags/Tag[Targets/TargetTypeValue = '30']/Simple[Name = 'TITLE']/String)" \
+    <( mkvextract tags Gorillaz-M1\ A1-ZurS1L3cV48.webm )
+
 # vim: ft=sh
