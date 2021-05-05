@@ -671,4 +671,7 @@ ffmpeg -i video -i audio -vcodec copy -acodec copy -map 0:0 -map 1:0 output
 # wav
 ffmpeg -y -i input.wav -vn -acodec libmp3lame -ab 128k -af "volume=+10dB" output.mp3
 
+# high pitched voice
+ffmpeg -i input -vcodec copy -af "asetrate=44100*1.5, aresample=44100, atempo=1/1.5" output
+
 # vim:ft=sh:textwidth=0
