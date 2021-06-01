@@ -1,4 +1,4 @@
--vn -acodec copy -to 00:07:06              01_New_Order-_-Live_at_Finsbury_Park-_-Crystal.m4a
+-vn -acodec copy              -to 00:07:06 01_New_Order-_-Live_at_Finsbury_Park-_-Crystal.m4a
 -vn -acodec copy -ss 00:07:06 -to 00:10:54 02_New_Order-_-Live_at_Finsbury_Park-_-Transmission.m4a
 -vn -acodec copy -ss 00:10:54 -to 00:15:06 03_New_Order-_-Live_at_Finsbury_Park-_-Regret.m4a
 -vn -acodec copy -ss 00:15:06 -to 00:20:06 04_New_Order-_-Live_at_Finsbury_Park-_-Ceremony.m4a
