@@ -649,14 +649,21 @@ ffmpeg -y -i input.ts -vcodec copy -acodec copy -ss 00:00:27 -to 00:05:58 flamen
 # cut and reencode video
 ffmpeg -y -i input.ts -vcodec libx264 -acodec copy -ss 00:00:27 -to 00:05:58 flamengo_river_2019.mp4
 
+# reencode
+ffmpeg -y -i input.ts -vcodec libx264 -acodec copy flamengo_river_2019.mp4
+
 # audio only
 ffmpeg -y -i input.ts -vn -acodec copy flamengo_river_2019.mp4
 
 # m3u8
 ffmpeg -y -live_start_index 0 -i "http://example.com/master.m3u8" -c copy -bsf:a aac_adtstoasc output.mp4
 
-ffmpeg -headers "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.101 Safari/537.36" \
-    -headers "Accept: */*" -y -live_start_index 0 -i "http://example.com/master.m3u8" -c copy -bsf:a aac_adtstoasc output.mp4
+ffmpeg -headers $'Accept: */*' \
+    -y -live_start_index 0 -i "http://example.com/master.m3u8" \
+    -c copy -bsf:a aac_adtstoasc output.mp4
+
+# aspect ratio
+ffmpeg -i input -c copy -aspect 4:3 output
 
 # The chunk is actually MPEG-TS but first 127 bytes appears to be a small PNG
 # file affixed at the front. Forcing input format allows correct decoding.
