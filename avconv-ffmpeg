@@ -675,6 +675,9 @@ ffmpeg -safe 0 -f concat -i mylist.txt -c copy out.mp4
 # mux
 ffmpeg -i video -i audio -vcodec copy -acodec copy -map 0:0 -map 1:0 output
 
+# delaying audio stream by 2s
+ffmpeg -i video -itsoffset 2.0 -i audio -vcodec copy -acodec copy -map 0:0 -map 1:0 output
+
 # wav
 ffmpeg -y -i input.wav -vn -acodec libmp3lame -ab 128k -af "volume=+10dB" output.mp3
 
