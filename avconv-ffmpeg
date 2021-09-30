@@ -519,7 +519,7 @@ ffmpeg -y -i input -vcodec copy -acodec copy -ss 00:04:02 -to 00:04:18 output
 
 ffmpeg -y -i input -vn -acodec libmp3lame -ab 128k -ss 00:00:19 caac.mp3
 
-ffmpeg -y -i poesia.mp3 -vn -acodec  aac -ss 00:00:02 poesia.m4a
+ffmpeg -y -i poesia.mp3 -vn -acodec aac -ss 00:00:02 poesia.m4a
 
 ffmpeg -y -i poesia.mp3 -filter_complex \
 "[0:0]atrim=2.0:2.5[p1]; \
@@ -683,5 +683,10 @@ ffmpeg -y -i input.wav -vn -acodec libmp3lame -ab 128k -af "volume=+10dB" output
 
 # high pitched voice
 ffmpeg -i input -vcodec copy -af "asetrate=44100*1.5, aresample=44100, atempo=1/1.5" output
+
+# m4a increase volume
+ffmpeg -y -i poesia.mp3 -vn -acodec aac -ab 125k -af "volume=+10dB" poesia.m4a
+
+ffmpeg -y -i input.mp4 -vcodec copy -acodec aac -ab 125k -af "volume=+10dB" output.mp4
 
 # vim:ft=sh:textwidth=0
