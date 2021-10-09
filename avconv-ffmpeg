@@ -649,6 +649,10 @@ ffmpeg -y -i input.ts -vcodec copy -acodec copy -ss 00:00:27 -to 00:05:58 flamen
 # cut and reencode video
 ffmpeg -y -i input.ts -vcodec libx264 -acodec copy -ss 00:00:27 -to 00:05:58 flamengo_river_2019.mp4
 
+# cut and reencode audio
+
+ffmpeg -y -i input.ts -vn -acodec libmp3lame -ss 00:00:27 -to 00:05:58 audio.mp3
+
 # reencode
 ffmpeg -y -i input.ts -vcodec libx264 -acodec copy flamengo_river_2019.mp4
 
