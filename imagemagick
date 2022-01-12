@@ -17,4 +17,8 @@ convert guybrush_lighter.gif guybrush_lighter/xx_%05d.png
 # shave, the opposite of border
 convert -shave 440x0 {} shaved_{}
 
+# cropping, 2 dimensions, 2 directions
+                       #left,top      right,bottom
+convert test.png -crop +180+140 -crop -60-140 cropped.png
+
 # vim:ft=sh
