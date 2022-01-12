@@ -1,0 +1,20 @@
+# barrel distortion
+convert barrel_distorted.jpg -virtual-pixel black \
+          -distort Barrel "0.2 0.0 0.0 1.0" \
+          barrel_distorted_fixed.jpg
+
+convert modulos.png -transparent white -fuzz 90% modulos_transp.png
+
+mogrify -rotate "-45" foo.jpg
+
+convert P_20201026_152701.jpg -rotate 270 P_20201026_152701_270.jpg
+
+convert dragon.gif -resize 50%  half_dragon.gif
+
+# extract images from gif
+convert guybrush_lighter.gif guybrush_lighter/xx_%05d.png
+
+# shave, the opposite of border
+convert -shave 440x0 {} shaved_{}
+
+# vim:ft=sh
