@@ -683,6 +683,13 @@ ffmpeg -y -f mpegts -i in.ts -c copy out.mp4
 # concat
 ffmpeg -safe 0 -f concat -i mylist.txt -c copy out.mp4
 
+# mylist.txt and its referenced files must be in same directory
+
+# Contents:
+#
+# > file 'file1.mov'
+# > file 'file2.mov'
+
 # mux
 ffmpeg -i video -i audio -vcodec copy -acodec copy -map 0:0 -map 1:0 output
 
