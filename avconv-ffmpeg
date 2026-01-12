@@ -653,6 +653,9 @@ ffmpeg -y -i input -vcodec copy -acodec copy -ss 00:00:00 output
 # horizontal flip (ffmpeg 8)
 ffmpeg -display_vflip -i input.mp4 -c copy output.mp4
 
+# Delay audio without reencoding
+ffmpeg -i input1 -itsoffset 3.84 -i input2 -map 0:v -map 1:a -c copy output
+
 # cut and reencode video
 ffmpeg -y -i input -vcodec libx264 -acodec copy -ss 00:00:27 -to 00:05:58 flamengo_river_2019.mp4
 
