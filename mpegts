@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+set -x
+
+program="${0##*/}"
+
+print_usage() {
+    echo "${program} MPEGTS"
+}
+
+[[ ${#} != 1 ]] && print_usage 2>&1 && exit 1
+
+get_size(){
+  stat -c %s "${1}"
+}
+
+file="${1}"
+file_without_extension="${file%.*}"
+size=$(get_size "${file}")
+
+mv "${file}" "${file_without_extension}"
+
+ffmpeg -y -f mpegts -i "${file_without_extension}" -c copy "${file}"
+
+ratio=$(echo "(${size} / $(get_size "${file}"))" | bc -l)
