@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -x
+# set -x
 
 program="${0##*/}"
 
@@ -22,4 +22,6 @@ mv "${file}" "${file_without_extension}"
 
 ffmpeg -y -f mpegts -i "${file_without_extension}" -c copy "${file}"
 
-ratio=$(echo "(${size} / $(get_size "${file}"))" | bc -l)
+ratio_gt_1=$(echo "(${size} / $(get_size "${file}")) > 1" | bc -l)
+
+[[ ${ratio_gt_1} == 1 ]] && rm -v "${file_without_extension}"
