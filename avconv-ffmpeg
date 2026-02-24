@@ -716,6 +716,8 @@ ffmpeg -i video -i audio -vcodec copy -acodec copy -map 0:0 -map 1:0 output
 # file affixed at the front. Forcing input format allows correct decoding.
 ffmpeg -y -f mpegts -i examplets -c copy example.mp4
 
+# see ffmpeg_commands/curl for curl tips
+
 # delaying audio stream by 2s
 ffmpeg -i video -itsoffset 2.0 -i audio -vcodec copy -acodec copy -map 0:0 -map 1:0 output
 
