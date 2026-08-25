@@ -10,7 +10,8 @@ print_usage() {
 
 [[ ${#} != 1 ]] && print_usage >&2 && exit 1
 
-ffprobe "${1}" 2>&1 | rg -qF 'Stream #0:0: Video: png, rgba(pc)'
+ffprobe "${1}" 2>&1 | rg -qF -e 'Stream #0:0: Video: png, rgba(pc)' \
+  -e 'Stream #0:0: Video: png, rgb24(pc)'
 
 get_size(){
   stat -c %s "${1}"
